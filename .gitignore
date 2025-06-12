@@ -1,0 +1,45 @@
+# Compiled binaries
+*.exe
+*.out
+*.o
+*.a
+*.so
+*.dll
+
+# Go build cache
+/go/bin/
+/go/pkg/
+/bin/
+/pkg/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Go Modules cache
+go.sum
+go.mod~
+
+# IDE files (VS Code, JetBrains, etc.)
+.vscode/
+.idea/
+*.iml
+
+# Dependency management
+/vendor/
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+config.yaml
+secrets.yaml
+
+# Debugging files
+trace.out
+heap.out
+cpu.out
+
+# Docker-related
+docker-compose.override.yml
