@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"net/http"
 	"portfolio_form/models"
 	"portfolio_form/services"
@@ -31,5 +32,19 @@ func (f *FormController) CreateFormDetails(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
+
+}
+
+func (f *FormController) GetAllFormDetailsByEmail(c *gin.Context) {
+
+	querParams := c.Param("email")
+	fmt.Print("Quer", querParams)
+
+	response, err := f.services.GetAllFormDetailsByEmail(querParams)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"data": response})
 
 }
