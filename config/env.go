@@ -8,8 +8,8 @@ import (
 )
 
 type Env struct {
-	MongoURL    string
-	DatbaseName string
+	MongoURL     string
+	DatabaseName string
 }
 
 var Envs Env
@@ -20,7 +20,7 @@ func InitializeEnv() {
 	}
 
 	Envs = Env{
-		MongoURL:    os.Getenv("MONGO_URL"),
-		DatbaseName: os.Getenv("DB_NAME"),
+		MongoURL:     os.Getenv("MONGO_URL"),
+		DatabaseName: os.Getenv("DB_NAME"),
 	}
 }

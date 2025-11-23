@@ -22,3 +22,11 @@ func (f *FormService) CreateFormDetails(payload models.FormInputs) error {
 	}
 	return nil
 }
+
+func (f *FormService) GetAllFormDetailsByEmail(email string) ([]models.FormInputs, error) {
+	formData, err := f.repos.GetAllFormDetailsByEmail(email)
+	if err != nil {
+		return nil, err
+	}
+	return formData, err
+}
