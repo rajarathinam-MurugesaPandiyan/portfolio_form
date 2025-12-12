@@ -32,6 +32,12 @@ func main() {
 	// form routes
 	r.POST("/createForm", handlers.CreateFormDetails)
 	r.GET("/getForm/:email", handlers.GetAllFormDetailsByEmail)
+	r.GET("/hello", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "Hello machi! Gin API working🔥",
+			"status":  "success",
+		})
+	})
 
 	go func() {
 		log.Println("✅ Server is running on port 8080")
